@@ -11,7 +11,7 @@ import Typography from '@mui/material/Typography';
 const steps = [
     {
         label: 'NulisCv.com',
-        description: `<a href="www.nuliscv.com">NulisCV.com</a> is my own website who peoples can create CV/Resume for easly. I build it with NextJS, NestJS, MongoDB, React JS, and another framework like tailwindcss, redux`,
+        description: `<a href="https://www.nuliscv.com">NulisCV.com</a> is my own website who peoples can create CV/Resume for easly. I build it with NextJS, NestJS, MongoDB, React JS, and another framework like tailwindcss, redux`,
     },
     {
         label: 'Career Days (Virtual Jobfair) Trisakti University',
@@ -45,6 +45,10 @@ const steps = [
     {
         label: 'HSE System (PT Petrolab Services)',
         description: `<a href="https://hse.petrolab.co.id/">hse.petrolab.co.id</a> is Exams test for each Pertolab employee. Stack : Yii2 and Vue JS`,
+    },
+    {
+        label: 'DNG Logistics (Company Profile Website) using October CVM',
+        description: `<a href="https://www.dnglogistics.co.id">www.dnglogistics.co.id</a> is Company profile website that use october CMS`,
     },
 ];
 

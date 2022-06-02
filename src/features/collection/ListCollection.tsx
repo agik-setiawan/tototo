@@ -20,31 +20,30 @@ import Swal from 'sweetalert2';
 import { GET_ALL_ANIME } from '../../Graphql/Queries';
 import { AnimeModel } from '../../models/anime.model';
 import { RootState } from '../../store';
-import { setAnimeList } from '../anime/anime.slice';
+import { setAnimeList, setPage } from '../anime/anime.slice';
 import { addCollection, collections, deleteCollection, findCollection, updateCollection } from './collection.service';
 export default function ListCollection() {
+    
+    const dispatch = useDispatch();
+    const pageState = useSelector((state: RootState) => state.anime.page);
 
-    // const dispatch = useDispatch();
-    // const [curentPage, setCurentPage] = useState(1);
-    // const [perPage, setPerPage] = useState(10)
-    // const { data, error, refetch, loading } = useQuery(GET_ALL_ANIME, {
-    //     variables: {
-    //         page: curentPage,
-    //         perPage: perPage
-    //     }
-    // });
-    // const [listAnime, setListAnime] = useState([]);
-    // const [pageInfo, setPageInfo]: any = useState({});
+
+    const { data, error, refetch, loading } = useQuery(GET_ALL_ANIME, {
+        variables: {
+            page: pageState.page,
+            perPage: pageState.perPage
+        }
+    });
+
+    useEffect(() => {
+        refetch();
+    }, [pageState])
 
     // useEffect(() => {
     //     if (data) {
     //         if (data.Page) {
     //             if (data.Page.media) {
-    //                 setListAnime(data.Page.media);
     //                 dispatch(setAnimeList(data.Page.media));
-    //             }
-    //             if (data.Page.pageInfo) {
-    //                 setPageInfo(data.Page.pageInfo);
     //             }
     //         }
     //     }
@@ -154,7 +153,7 @@ export default function ListCollection() {
     return (
 
         <div>
-            <Dialog open={open} onClose={() => { setOpen(false) }} fullWidth>
+            <Dialog open={open} onClose={() => { setOpen(false) }} fullWidth css={{ maxWidth: 500, margin: '0 auto 0 auto' }}>
                 <DialogTitle>
                     <div css={{ display: 'flex', justifyContent: 'space-between' }}>
                         <span><span css={{ textTransform: 'capitalize' }}>{modalType}</span> Collection</span>

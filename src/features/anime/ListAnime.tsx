@@ -6,7 +6,7 @@ import Loading from "../../components/Loading";
 import Pagination from "../../components/Pagination";
 import { GET_ALL_ANIME } from "../../Graphql/Queries"
 import { AnimeModel } from "../../models/anime.model";
-import { setAnimeList } from "./anime.slice";
+import { setAnimeList, setPage } from "./anime.slice";
 
 
 export default function ListAnime() {
@@ -31,6 +31,7 @@ export default function ListAnime() {
                 }
                 if (data.Page.pageInfo) {
                     setPageInfo(data.Page.pageInfo);
+                    dispatch(setPage({ perPage: data.Page.pageInfo.perPage, page: data.Page.pageInfo.curentPage }))
                 }
             }
         }

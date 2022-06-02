@@ -5,7 +5,8 @@ import Header from '../components/Header';
 export const layoutStyle = css({
     maxWidth: 500,
     minHeight: '100vh',
-    backgroundColor: '#282c34'
+    backgroundColor: '#282c34',
+    margin:'0 auto 0 auto'
 });
 
 export default function AppLayout({ children }: any) {
