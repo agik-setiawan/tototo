@@ -45,7 +45,7 @@ export default function Pagination({ setNext, setPrev, pageInfo, setPage }: Pagi
                 {
                     page.map((item) => {
                         return (
-                            <span>
+                            <span key={item}>
                                 {
                                     item !== 1 &&
                                     <span css={{ ...pageNumber, color: pageInfo?.currentPage == item ? 'red' : '' }} onClick={() => { setPage(item) }}>{item}</span>
