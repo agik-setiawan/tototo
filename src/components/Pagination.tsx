@@ -23,8 +23,9 @@ export default function Pagination({ setNext, setPrev, pageInfo, setPage }: Pagi
 
     const page = [];
     for (let index = 0; index < 4; index++) {
-        page.push(pageInfo?.currentPage + index)
-
+        if(!isNaN(pageInfo?.currentPage)){
+            page.push(pageInfo?.currentPage + index)
+        }
     }
     return (
         <div css={{ display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#F1F5F9', margin: '20px 0 20px 0' }}>
