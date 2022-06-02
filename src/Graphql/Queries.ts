@@ -15,7 +15,9 @@ query ($id: Int, $page: Int, $perPage: Int, $search: String) {
         title {
           romaji
         },
-        bannerImage
+        bannerImage,
+        genres,
+        episodes
       }
     }
   }

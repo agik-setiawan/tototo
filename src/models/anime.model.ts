@@ -4,4 +4,6 @@ export interface AnimeModel {
         romaji?: string;
     };
     bannerImage?: string;
+    genres?:string[];
+    episodes?:number
 }
