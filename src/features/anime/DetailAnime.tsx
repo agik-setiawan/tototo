@@ -4,6 +4,7 @@ import { jsx, css } from '@emotion/react'
 import { useQuery } from "@apollo/client";
 import Loading from "../../components/Loading";
 import { GET_ALL_ANIME } from "../../Graphql/Queries";
+import Header2 from '../../components/Header2';
 
 interface Detail {
     id: number
@@ -20,6 +21,7 @@ export default function DetailAnime({ id }: Detail) {
 
     return (
         <div>
+            {detail && <Header2 title={detail[0].title?.romaji}/>}
             {
                 loading &&
                 <Loading />
