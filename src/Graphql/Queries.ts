@@ -17,7 +17,10 @@ query ($id: Int, $page: Int, $perPage: Int, $search: String) {
         },
         bannerImage,
         genres,
-        episodes
+        episodes,
+        seasonYear,
+        season,
+        type
       }
     }
   }

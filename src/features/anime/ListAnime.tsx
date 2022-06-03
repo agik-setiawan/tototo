@@ -1,4 +1,5 @@
 import { useQuery } from "@apollo/client"
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import CardAnime from "../../components/CardAnime";
@@ -49,7 +50,7 @@ export default function ListAnime() {
                         listAnime?.map((item: AnimeModel) => {
                             return (
                                 <div key={item.id}>
-                                    <CardAnime {...item} />
+                                        <CardAnime {...item} />
                                 </div>
                             )
                         })
